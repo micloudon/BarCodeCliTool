@@ -6,7 +6,6 @@ from InquirerPy import prompt
 def WelcomeGetSN():
     print("Hello my name is Barcode Generator CLI Tool, you can call me BGCT if you like")
     print()
-    print("Enter the serial number you wish to turn into a barcode")
 
 def IncludeText():
     print()
@@ -17,6 +16,7 @@ def IncludeText():
 def main():
 
     WelcomeGetSN()
+    print("Enter the serial number you wish to turn into a barcode")
     barcodeNumber = input()
 
     IncludeText()
