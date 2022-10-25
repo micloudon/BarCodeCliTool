@@ -7,8 +7,10 @@ from InquirerPy import prompt
 
 def bulkSn():
     print("BULK MODE SELECTED")
+    print()
     print("Only values in the first column of your csv file will be read")
-    print("Enter the PATH the your cvs file")
+    print()
+    print("Enter the PATH to your cvs file")
     pathcsv = input()
 
     print()
@@ -95,15 +97,23 @@ def bulkSn():
         from barcode import Gs1_128
         codeObj = Gs1_128
 
-    i = 0
-    for barcode in barcodes:
-        i += 1
-        my_code = codeObj(barcode, writer=ImageWriter())
+    print("are you sure you want to generate " + str(len(barcodes)) + " barcodes?")
+    print("y or n")
+    finalCheck = input()
 
-        my_code.save(str(i) + "_" + barcodeType + "_" + barcode + "_barcode", 
-        {"module_height": 7, 
-        "font_size": 5, 
-        "text_distance": 1.7, 
-        "quiet_zone": 2, 
-        "dpi": 200, 
-        "write_text": IncluTextBool})
+    if finalCheck == "y":
+        i = 0
+        for barcode in barcodes:
+            i += 1
+            my_code = codeObj(barcode, writer=ImageWriter())
+
+            my_code.save(str(i) + "_" + barcodeType + "_" + barcode + "_barcode", 
+            {"module_height": 7, 
+            "font_size": 5, 
+            "text_distance": 1.7, 
+            "quiet_zone": 2, 
+            "dpi": 200, 
+            "write_text": IncluTextBool})
+
+    else:
+        return

@@ -1,7 +1,7 @@
 from time import sleep
 from barcode.writer import ImageWriter
 from InquirerPy import prompt
-from bulkcsvtest import bulkSn
+from bulkmode import bulkSn
 
 # check for bulk, say if bulk then run the bulk script
 def WelcomeGetSN():
