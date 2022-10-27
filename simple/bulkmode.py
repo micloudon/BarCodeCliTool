@@ -44,7 +44,6 @@ def bulkSn():
 
     includeText = input()
 
-    barCodeType()
 
     IncluTextBool = False
     if includeText == "y":
@@ -54,6 +53,7 @@ def bulkSn():
     else:
         print("No Text with barcode")
         
+    barCodeType()
 
     
 
